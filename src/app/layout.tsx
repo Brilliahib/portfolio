@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakartaSans.variable} antialiased scroll-smooth`}
+      className={`${jakartaSans.variable} antialiased scroll-smooth fade-in`}
     >
       <body>
         <main className="min-h-screen font-jakartasans max-w-2xl mx-auto py-12 md:py-24 md:px-0 px-6">
