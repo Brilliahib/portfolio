@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardTitle } from "@/components/ui/card";
 import { projects } from "@/constants/projects/project-lis";
 import { Sparkle } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LandingProjectSection() {
   return (
@@ -27,34 +28,36 @@ export default function LandingProjectSection() {
             </div>
             <div className="grid md:grid-cols-2 grid-cols-1 gap-4">
               {projects.map((project) => (
-                <Card key={project.id}>
-                  <CardTitle>
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={1500}
-                      height={902}
-                      className="w-full rounded-t-xl"
-                    />
-                  </CardTitle>
-                  <CardContent className="px-3 py-2">
-                    <div className="space-y-4">
-                      <h1 className="font-bold">{project.title}</h1>
-                      <p className="text-muted-foreground text-sm">
-                        {project.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                  <CardFooter className="px-3 pb-4 pt-2">
-                    <div className="flex flex-wrap gap-2">
-                      {project.techs.map((tech, index) => (
-                        <Badge key={index} variant={"secondary"}>
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardFooter>
-                </Card>
+                <Link key={project.id} href={project.href} target="blank">
+                  <Card className="h-full hover:shadow-lg">
+                    <CardTitle>
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={1500}
+                        height={902}
+                        className="w-full rounded-t-xl"
+                      />
+                    </CardTitle>
+                    <CardContent className="px-3 py-2">
+                      <div className="space-y-4">
+                        <h1 className="font-bold">{project.title}</h1>
+                        <p className="text-muted-foreground text-sm">
+                          {project.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                    <CardFooter className="px-3 pb-4 pt-2">
+                      <div className="flex flex-wrap gap-2">
+                        {project.techs.map((tech, index) => (
+                          <Badge key={index} variant={"secondary"}>
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>
