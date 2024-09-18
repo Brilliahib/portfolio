@@ -8,7 +8,7 @@ export default function LandingHeroSection() {
           <div className="w-full flex justify-between gap-2">
             <div className="flex-col flex flex-1 space-y-1.5">
               <span className="flex gap-2 items-center md:text-6xl text-2xl font-bold">
-                <div>Hi, I'm Brilly</div>
+                <div>Hi, I&apos;m Brilly</div>
                 <Image
                   src={"assets/verified.svg"}
                   alt="Verified"
